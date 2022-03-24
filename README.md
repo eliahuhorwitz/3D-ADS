@@ -1,5 +1,11 @@
 # An Empirical Investigation of 3D Anomaly Detection and Segmentation
 ### [Project](https://www.vision.huji.ac.il/3d_ads) | [Paper](https://arxiv.org/abs/2203.05550) <br>
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-empirical-investigation-of-3d-anomaly/3d-anomaly-detection-and-segmentation-on)](https://paperswithcode.com/sota/3d-anomaly-detection-and-segmentation-on?p=an-empirical-investigation-of-3d-anomaly)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-empirical-investigation-of-3d-anomaly/depth-anomaly-detection-and-segmentation-on)](https://paperswithcode.com/sota/depth-anomaly-detection-and-segmentation-on?p=an-empirical-investigation-of-3d-anomaly)
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-empirical-investigation-of-3d-anomaly/rgb-3d-anomaly-detection-and-segmentation-on)](https://paperswithcode.com/sota/rgb-3d-anomaly-detection-and-segmentation-on?p=an-empirical-investigation-of-3d-anomaly)
+
 Official PyTorch Implementation for the "An Empirical Investigation of 3D Anomaly Detection and Segmentation" paper.  
 
 ![](imgs/ours_sum.png)
