@@ -1,0 +1,10 @@
+numpy
+Pillow
+scikit-learn
+scipy
+sklearn
+timm
+torch
+torchvision
+tqdm
+wget
