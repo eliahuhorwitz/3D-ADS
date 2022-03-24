@@ -119,7 +119,7 @@ ___
 ### Preprocessing
 As mentioned in the paper, the results reported use the preprocessed dataset. <br>
 While this preprocessing helps in cases where depth images are used, when using the point cloud the results are less pronounced. <br>
-The preprocessing script is provided, however, it may take a few hours to run. Results for the preprocessed dataset are reported below. <br>
+It may take a few hours to run the preprocessing. Results for the preprocessed dataset are reported below. <br>
 
 To run the preprocessing 
 ```bash
