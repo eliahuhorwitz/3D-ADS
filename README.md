@@ -2,14 +2,8 @@
 ### [Project](https://www.vision.huji.ac.il/3d_ads) | [Paper](https://arxiv.org/abs/2203.05550) <br>
 Official PyTorch Implementation for the "An Empirical Investigation of 3D Anomaly Detection and Segmentation" paper.  
 
-
+![](imgs/ours_sum.png)
 ![](imgs/heatmaps.png)
-We conduct an empirical investigation which seeks the answers to several
-questions: 
-1. Are current 3D methods outperforming state-of-the-art 2D AD&S methods? 
-2. Is 3D information potentially useful for AD&S? 
-3. What are effective ways of representing 3D local regions for AD&S? 
-4. Are there complementary benefits from using both 3D and color features? 
 
 ___
 
@@ -29,7 +23,6 @@ ___
 > We conclude by discussing future challenges for 3D anomaly detection and segmentation.
 
 ![](imgs/rgb_v_3d.png)
-![](imgs/ours_sum.png)
 
 ## Getting Started
 
@@ -73,14 +66,14 @@ python3 main.py
 To change which classes are used, see `mvtec3d_classes` located at `data/mvtec3d.py`. <br>
 To change which methods are used, see the `PatchCore` constructor located at `patchcore_runner.py` and the `METHOD_NAMES` variable located at `main.py`.
 
-**Note:** the results below are of the raw dataset, see the preprocessing section for the preprocessing code and results (as seen in the paper). 
-The pixel wise metrics benefit from the preprocessing.  
+**Note:** The results below are of the raw dataset, see the [preprocessing](https://github.com/eliahuhorwitz/3D-ADS#preprocessing) section for the preprocessing code and results (as seen in the paper). 
+**Note:** The pixel-wise metrics benefit from preprocessing. As such, the unprocessed results are slightly below the ones reported in the paper.  
 
 
 
 #### AU PRO Results
 
-| Method     |   Bagel |   Cable Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
+| Method     |   Bagel |   Cable<br>Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
 |:-----------|--------:|--------------:|---------:|---------:|--------:|-------:|--------:|---------:|-------:|-------:|-------:|
 | RGB iNet   |   0.898 |   0.948 |   0.927 |   0.872 |   0.927 |   0.555 |   0.902 |   0.931 |   0.903 |   0.899 |   0.876 |
 | Depth iNet |   0.701 |   0.544 |   0.791 |   0.835 |   0.531 |   0.100 |   0.800 |   0.549 |   0.827 |   0.185 |   0.586 |
@@ -94,7 +87,7 @@ The pixel wise metrics benefit from the preprocessing.
 
 #### Image ROCAUC Results
 
-| Method     |   Bagel |   Cable Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
+| Method     |   Bagel |   Cable<br>Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
 |:-----------|--------:|--------------:|---------:|---------:|--------:|-------:|--------:|---------:|-------:|-------:|-------:|
 | RGB iNet   |   0.854 |   **0.840** |   0.824 |   0.687 |   **0.974** |   0.716 |    0.713 |   0.593 |   0.920 |   0.724 |   0.785 |
 | Depth iNet |   0.624 |   0.683 |   0.676 |   0.838 |   0.608 |   0.558 |    0.567 |   0.496 |   0.699 |   0.619 |   0.637 |
@@ -103,11 +96,12 @@ The pixel wise metrics benefit from the preprocessing.
 | SIFT       |   0.696 |   0.553 |   0.824 |   0.696 |   0.795 |   **0.773** |    0.573 |   0.746 |   0.936 |   0.553 |   0.714 |
 | FPFH       |   0.820 |   0.533 |   0.877 |   0.769 |   0.718 |   0.574 |    0.774 |   0.895 |   **0.990** |   0.582 |   0.753 |
 | RGB + FPFH |   **0.938** |   0.765 |   **0.972** |   **0.888** |   0.960 |   0.664 |    **0.904** |   **0.929** |   0.982 |   **0.726** |   **0.873** |
-___
+
+
 
 #### Pixel ROCAUC Results 
 
-| Method     |   Bagel |   Cable Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
+| Method     |   Bagel |   Cable<br>Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
 |:-----------|--------:|--------------:|---------:|---------:|--------:|-------:|--------:|---------:|-------:|-------:|-------:|
 | RGB iNet   |   0.983 |   0.984 |   0.980 |   0.974 |   0.985 |   0.836 |   0.976 |   0.982 |   0.989 |   0.975 |   0.966 |
 | Depth iNet |   0.941 |   0.759 |   0.933 |   0.946 |   0.829 |   0.518 |   0.939 |   0.743 |   0.974 |   0.632 |   0.821 |
@@ -118,7 +112,8 @@ ___
 | RGB + FPFH |   **0.996** |   **0.991** |   0.997 |   **0.995** |   **0.995** |   **0.972** |   **0.996** |   0.998 |   0.995 |   **0.994** |   **0.993** |
 ___
 
-
+<br>
+<br>
 
 
 ### Preprocessing
@@ -135,7 +130,7 @@ python3 utils/preprocessing.py datasets/mvtec3d/
 
 #### Preprocessed AU PRO Results 
 
-| Method     |   Bagel |   Cable Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
+| Method     |   Bagel |   Cable<br>Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
 |:-----------|--------:|--------------:|---------:|---------:|--------:|-------:|--------:|---------:|-------:|-------:|-------:|
 | RGB iNet   |   0.902 |   0.948 |   0.929 |   0.873 |   0.891 |   0.570 |   0.903 |   0.933 |  0.909 |  0.905 |  0.876 |
 | Depth iNet |   0.763 |   0.676 |   0.884 |   0.883 |   0.864 |   0.322 |   0.881 |   0.840 |  0.844 |  0.634 |  0.759 |
@@ -144,11 +139,11 @@ python3 utils/preprocessing.py datasets/mvtec3d/
 | SIFT       |   0.944 |   0.845 |   0.975 |   0.894 |   0.909 |   0.733 |   0.946 |   0.981 |  0.953 |  0.928 |  0.911 |
 | FPFH       |   0.974 |   0.878 |   **0.982** |   0.908 |   0.892 |   0.730 |   **0.977** |   **0.982** |  **0.956** |  0.962 |  0.924 |
 | RGB + FPFH |   **0.976** |   **0.968** |   0.979 |   **0.972** |   **0.932** |   **0.884** |   0.975 |   0.981 |  0.950 |  **0.972** |  **0.959** |
-___
+
 
 #### Preprocessed Image ROCAUC Results 
 
-| Method     |   Bagel |   Cable Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
+| Method     |   Bagel |   Cable<br>Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
 |:-----------|--------:|--------------:|---------:|---------:|--------:|-------:|--------:|---------:|-------:|-------:|-------:|
 | RGB iNet   |   0.875 |   **0.880** |   0.777 |   0.705 |   **0.938** |   **0.720** |   0.718 |   0.615 |  0.859 |  0.681 |  0.777 |
 | Depth iNet |   0.690 |   0.597 |   0.753 |   0.862 |   0.881 |   0.590 |   0.597 |   0.598 |  0.791 |  0.577 |  0.694 |
@@ -158,11 +153,10 @@ ___
 | FPFH       |   0.825 |   0.534 |   0.952 |   0.783 |   0.883 |   0.581 |   0.758 |   0.889 |  **0.929** |  0.656 |  0.779 |
 | RGB + FPFH |   **0.923** |   0.770 |   **0.967** |   **0.905** |   0.928 |   0.657 |   **0.913** |   **0.915** |  0.921 |  **0.881** |  **0.878** |
 
-___
 
 #### Preprocessed Pixel ROCAUC Results
 
-| Method     |   Bagel |   Cable Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
+| Method     |   Bagel |   Cable<br>Gland |   Carrot |   Cookie |   Dowel |   Foam |   Peach |   Potato |   Rope |   Tire |   Mean |
 |:-----------|--------:|--------------:|---------:|---------:|--------:|-------:|--------:|---------:|-------:|-------:|-------:|
 | RGB iNet   |   0.983 |   0.984 |   0.98  |   0.974 |   0.973 |  0.851 |   0.976 |   0.983 |  0.987 |  0.977 |  0.967 |
 | Depth iNet |   0.957 |   0.901 |   0.966 |   0.970 |   0.967 |  0.771 |   0.971 |   0.949 |  0.977 |  0.891 |  0.932 |
@@ -172,7 +166,10 @@ ___
 | FPFH       |   0.995 |   0.965 |   **0.999** |   0.947 |   0.966 |  0.928 |   **0.996** |   **0.999** |  **0.996** |  0.991 |  0.978 |
 | RGB + FPFH |   **0.996** |   **0.992** |   0.997 |   **0.994** |   **0.981** |  **0.973** |   **0.996** |   0.998 |  0.994 |  **0.995** |  **0.992** |
 
+___
 
+<br>
+<br>
 
 
 ## Citation
