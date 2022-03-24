@@ -48,8 +48,10 @@ pip install -r requirements.txt
 ```bash
 mkdir datasets
 cd datasets
+mkdir mvtec3d
+cd mvtec3d
 wget https://www.mydrive.ch/shares/45920/dd1eb345346df066c63b5c95676b961b/download/428824485-1643285832/mvtec_3d_anomaly_detection.tar.xz
-tar -xvf mvtec_3d_anomaly_detection.tar.xz && mv mvtec_3d_anomaly_detection mvtec3d
+tar -xvf mvtec_3d_anomaly_detection.tar.xz 
 ```
 <br>
 <br>
