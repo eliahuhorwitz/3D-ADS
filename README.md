@@ -130,8 +130,13 @@ As mentioned in the paper, the results reported use the preprocessed dataset. <b
 While this preprocessing helps in cases where depth images are used, when using the point cloud the results are less pronounced. <br>
 It may take a few hours to run the preprocessing. Results for the preprocessed dataset are reported below. <br>
 
-To run the preprocessing 
+To run the preprocessing, [Open3D](https://github.com/isl-org/Open3D) library is required. 
 ```bash
+# install required packages
+sudo apt install libgl1-mesa-glx
+pip install open3d
+
+# run the preprocessing
 python3 utils/preprocessing.py datasets/mvtec3d/
 ```
 
