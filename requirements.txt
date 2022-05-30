@@ -9,3 +9,6 @@ torchvision
 tqdm
 wget
 open3d
+tifffile
+scikit-image
+kornia
