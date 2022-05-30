@@ -61,15 +61,6 @@ def run_3d_ads():
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Process some integers.')
-    # parser.add_argument('integers', metavar='N', type=int, nargs='+', help='an integer for the accumulator')
     args = parser.parse_args()
 
     run_3d_ads()
-    # TODO Get raw results
-
-    # TODO Add the option to pick the methods
-    # TODO Add the option to pick the classes
-    # TODO Add option to pick the dataset path
-
-    # TODO Add README
-
