@@ -195,3 +195,4 @@ Eprint = {arXiv:2203.05550},
 - This work was supported in part by Oracle Cloud credits and related resources provided by the Oracle for Research program. [https://www.oracle.com/research](https://www.oracle.com/research)
  - The SIFT implementation is based on [Kornia](https://github.com/kornia/kornia)
  - The PatchCore logic is based on [https://github.com/rvorias/ind_knn_ad](https://github.com/rvorias/ind_knn_ad)
+ - The AUPRO implementation is based on the official MVTEC 3D-AD evaluation code found here [MVTEC 3D-AD](https://www.mvtec.com/company/research/datasets/mvtec-3d-ad)
