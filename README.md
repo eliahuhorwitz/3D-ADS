@@ -183,11 +183,12 @@ ___
 If you find this repository useful for your research, please use the following.
 
 ```
-@misc{2203.05550,
-Author = {Eliahu Horwitz and Yedid Hoshen},
-Title = {An Empirical Investigation of 3D Anomaly Detection and Segmentation},
-Year = {2022},
-Eprint = {arXiv:2203.05550},
+@article{horwitz2022empirical,
+  title={An Empirical Investigation of 3D Anomaly Detection and Segmentation},
+  author={Horwitz, Eliahu and Hoshen, Yedid},
+  journal={arXiv preprint arXiv:2203.05550},
+  year={2022}
+}
 ```
 
 
