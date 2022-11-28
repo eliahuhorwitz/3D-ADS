@@ -1,4 +1,4 @@
-# An Empirical Investigation of 3D Anomaly Detection and Segmentation
+# Back to the Feature: Classical 3D Features are (Almost) All You Need for 3D Anomaly Detection
 ### [Project](https://www.vision.huji.ac.il/3d_ads) | [Paper](https://arxiv.org/abs/2203.05550) <br>
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-empirical-investigation-of-3d-anomaly/3d-anomaly-detection-and-segmentation-on)](https://paperswithcode.com/sota/3d-anomaly-detection-and-segmentation-on?p=an-empirical-investigation-of-3d-anomaly)
 
@@ -6,27 +6,24 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/an-empirical-investigation-of-3d-anomaly/rgb-3d-anomaly-detection-and-segmentation-on)](https://paperswithcode.com/sota/rgb-3d-anomaly-detection-and-segmentation-on?p=an-empirical-investigation-of-3d-anomaly)
 
-Official PyTorch Implementation for the "An Empirical Investigation of 3D Anomaly Detection and Segmentation" paper.  
+Official PyTorch Implementation for the "Back to the Feature: Classical 3D Features are (Almost) All You Need for 3D Anomaly Detection" paper.  
 
 ![](imgs/ours_sum.png)
 ![](imgs/heatmaps.png)
 
 ___
 
-> **An Empirical Investigation of 3D Anomaly Detection and Segmentation**<br>
+> **Back to the Feature: Classical 3D Features are (Almost) All You Need for 3D Anomaly Detection**<br>
 > Eliahu Horwitz, Yedid Hoshen<br>
 > https://arxiv.org/abs/2203.05550 <br>
 >
->**Abstract:** Anomaly detection and segmentation (AD&S) in images has made tremendous progress in recent years while 3D information has often been ignored. 
-> The objective of this paper is to further understand the benefit and role of 3D as apposed to color in image anomaly detection. 
-> Our study begins by presenting a surprising finding: standard color-only anomaly segmentation methods, when applied to 3D datasets, significantly outperform all current methods.
-> On the other hand, we observe that color-only methods are insufficient for images containing geometric anomalies where shape cannot be unambiguously inferred from 2D. 
-> This suggests that better 3D methods are needed. We investigate different representations for 3D anomaly detection 
-> and discover that hand-crafted orientation-invariant representations are unreasonably effective on this task. 
-> We uncover a simple 3D-only method that outperforms all recent approaches while not using deep learning, external pretraining datasets or color information.
-> As the 3D-only method cannot detect color and texture anomalies, we combine it with 2D color features, 
-> granting us the best current results by a large margin (pixel ROCAUC: 99.2%, PRO: 95.9% on MVTec 3D-AD). 
-> We conclude by discussing future challenges for 3D anomaly detection and segmentation.
+>**Abstract:** Despite significant advances in image anomaly detection and segmentation, few methods use 3D information. We utilize a recently introduced 3D anomaly detection dataset to evaluate whether or not using 3D information is a lost opportunity. 
+> First, we present a surprising finding: standard color-only methods outperform all current methods that are explicitly designed to exploit 3D information. 
+> This is counter-intuitive as even a simple inspection of the dataset shows that color-only methods are insufficient for images containing geometric anomalies. 
+> This motivates the question: how can anomaly detection methods effectively use 3D information? We investigate a range of shape representations including hand-crafted and deep-learning-based; we demonstrate that rotation invariance plays the leading role in the performance. 
+> We uncover a simple 3D-only method that beats all recent approaches while not using deep learning, external pre-training datasets, or color information. 
+> As the 3D-only method cannot detect color and texture anomalies, we combine it with color-based features, significantly outperforming previous state-of-the-art. 
+> Our method, dubbed BTF (Back to the Feature) achieves pixel-wise ROCAUC: 99.3% and PRO: 96.4% on MVTec 3D-AD.
 
 ![](imgs/rgb_v_3d.png)
 
@@ -63,7 +60,7 @@ We provide the implementations for 7 methods investigated in the paper. These ar
 - HoG
 - SIFT
 - FPFH
-- RGB + FPFH
+- BTF (Ours)
 
 To run all methods on all 10 classes and save the PRO, Image ROCAUC, Pixel ROCAUC results to markdown tables run  
 ```bash
@@ -88,7 +85,7 @@ To change which methods are used, see the `PatchCore` constructor located at `pa
 | HoG        |   0.518 |   0.609 |   0.857 |   0.342 |   0.667 |   0.340 |   0.476 |   0.893 |   0.700 |   0.739 |   0.614 |
 | SIFT       |   0.894 |   0.722 |   0.963 |   0.871 |   0.926 |   0.613 |   0.870 |   0.973 |   0.958 |   0.873 |   0.866 |
 | FPFH       |   0.972 |   0.849 |   **0.981** |   0.939 |   0.963 |   0.693 |   0.975 |   **0.981** |   **0.980** |   0.949 |   0.928 |
-| RGB + FPFH |   **0.976** |   **0.967** |   0.979 |   **0.974** |   **0.971** |   **0.884** |   **0.976** |   **0.981** |   0.959 |   **0.971** |   **0.964** |
+| BTF (Ours) |   **0.976** |   **0.967** |   0.979 |   **0.974** |   **0.971** |   **0.884** |   **0.976** |   **0.981** |   0.959 |   **0.971** |   **0.964** |
 
 
 
@@ -102,7 +99,7 @@ To change which methods are used, see the `PatchCore` constructor located at `pa
 | HoG        |   0.560 |   0.615 |   0.676 |   0.491 |   0.598 |   0.489 |    0.542 |   0.553 |   0.655 |   0.423 |   0.560 |
 | SIFT       |   0.696 |   0.553 |   0.824 |   0.696 |   0.795 |   **0.773** |    0.573 |   0.746 |   0.936 |   0.553 |   0.714 |
 | FPFH       |   0.820 |   0.533 |   0.877 |   0.769 |   0.718 |   0.574 |    0.774 |   0.895 |   **0.990** |   0.582 |   0.753 |
-| RGB + FPFH |   **0.938** |   0.765 |   **0.972** |   **0.888** |   0.960 |   0.664 |    **0.904** |   **0.929** |   0.982 |   **0.726** |   **0.873** |
+| BTF (Ours) |   **0.938** |   0.765 |   **0.972** |   **0.888** |   0.960 |   0.664 |    **0.904** |   **0.929** |   0.982 |   **0.726** |   **0.873** |
 
 
 
@@ -116,7 +113,7 @@ To change which methods are used, see the `PatchCore` constructor located at `pa
 | HoG        |   0.782 |   0.846 |   0.965 |   0.684 |   0.848 |   0.741 |   0.779 |   0.973 |   0.926 |   0.903 |   0.845 |
 | SIFT       |   0.974 |   0.862 |   0.993 |   0.952 |   0.980 |   0.862 |   0.955 |   0.996 |   0.993 |   0.971 |   0.954 |
 | FPFH       |   0.995 |   0.955 |   **0.998** |   0.971 |   0.993 |   0.911 |   0.995 |   **0.999** |   **0.998** |   0.988 |   0.980 |
-| RGB + FPFH |   **0.996** |   **0.991** |   0.997 |   **0.995** |   **0.995** |   **0.972** |   **0.996** |   0.998 |   0.995 |   **0.994** |   **0.993** |
+| BTF (Ours) |   **0.996** |   **0.991** |   0.997 |   **0.995** |   **0.995** |   **0.972** |   **0.996** |   0.998 |   0.995 |   **0.994** |   **0.993** |
 ___
 
 <br>
@@ -145,7 +142,7 @@ python3 utils/preprocessing.py datasets/mvtec3d/
 | HoG        |   0.712 |   0.761 |   0.932 |   0.487 |   0.833 |   0.520 |   0.743 |   0.949 |  0.916 |  0.858 |  0.771 |
 | SIFT       |   0.944 |   0.845 |   0.975 |   0.894 |   0.909 |   0.733 |   0.946 |   0.981 |  0.953 |  0.928 |  0.911 |
 | FPFH       |   0.974 |   0.878 |   **0.982** |   0.908 |   0.892 |   0.730 |   **0.977** |   **0.982** |  **0.956** |  0.962 |  0.924 |
-| RGB + FPFH |   **0.976** |   **0.968** |   0.979 |   **0.972** |   **0.932** |   **0.884** |   0.975 |   0.981 |  0.950 |  **0.972** |  **0.959** |
+| BTF (Ours) |   **0.976** |   **0.968** |   0.979 |   **0.972** |   **0.932** |   **0.884** |   0.975 |   0.981 |  0.950 |  **0.972** |  **0.959** |
 
 
 #### Preprocessed Image ROCAUC Results 
@@ -158,7 +155,7 @@ python3 utils/preprocessing.py datasets/mvtec3d/
 | HoG        |   0.487 |   0.587 |   0.691 |   0.545 |   0.643 |   0.596 |   0.516 |   0.584 |  0.507 |  0.430 |  0.559 |
 | SIFT       |   0.722 |   0.640 |   0.892 |   0.762 |   0.829 |   0.678 |   0.623 |   0.754 |  0.767 |  0.603 |  0.727 |
 | FPFH       |   0.825 |   0.534 |   0.952 |   0.783 |   0.883 |   0.581 |   0.758 |   0.889 |  **0.929** |  0.656 |  0.779 |
-| RGB + FPFH |   **0.923** |   0.770 |   **0.967** |   **0.905** |   0.928 |   0.657 |   **0.913** |   **0.915** |  0.921 |  **0.881** |  **0.878** |
+| BTF (Ours) |   **0.923** |   0.770 |   **0.967** |   **0.905** |   0.928 |   0.657 |   **0.913** |   **0.915** |  0.921 |  **0.881** |  **0.878** |
 
 
 #### Preprocessed Pixel ROCAUC Results
@@ -171,7 +168,7 @@ python3 utils/preprocessing.py datasets/mvtec3d/
 | HoG        |   0.911 |   0.933 |   0.985 |   0.823 |   0.936 |  0.862 |   0.923 |   0.987 |  0.980 |  0.955 |  0.930 |
 | SIFT       |   0.986 |   0.957 |   0.996 |   0.952 |   0.967 |  0.921 |   0.986 |   0.998 |  0.994 |  0.983 |  0.974 |
 | FPFH       |   0.995 |   0.965 |   **0.999** |   0.947 |   0.966 |  0.928 |   **0.996** |   **0.999** |  **0.996** |  0.991 |  0.978 |
-| RGB + FPFH |   **0.996** |   **0.992** |   0.997 |   **0.994** |   **0.981** |  **0.973** |   **0.996** |   0.998 |  0.994 |  **0.995** |  **0.992** |
+| BTF (Ours) |   **0.996** |   **0.992** |   0.997 |   **0.994** |   **0.981** |  **0.973** |   **0.996** |   0.998 |  0.994 |  **0.995** |  **0.992** |
 
 ___
 
